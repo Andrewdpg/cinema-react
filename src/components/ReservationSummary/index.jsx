@@ -13,7 +13,7 @@ function ReservationSummary({ selectedMovie, selectedSchedule, selectedSeats }) 
         </div>
       )}
       <div className="mb-2">
-        <span className="font-semibold">Selected Seats:</span> {selectedSeats.join(', ') || 'None'}
+        <span className="font-semibold">Selected Seats:</span> {selectedSeats.map((seat) => seat.row + seat.column).join(', ') || 'None'}
       </div>
       <div className="text-xl font-bold text-red-600 mt-4">
         Total: ${selectedSeats.length * selectedSchedule.price}
